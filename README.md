@@ -7,6 +7,8 @@ I have a Ph.D. in Nuclear, Plasma & Radiological Engineering at the University o
 ## Featured project
 
 ### [How much evidence is enough? A Bayesian rare-event analysis of robotaxi crash data](https://github.com/mohalbati/av-safety-bayesian-analysis)
+[![DOI](https://zenodo.org/badge/1436574246.svg)](https://doi.org/10.5281/zenodo.23732384)
+
 
 An independent reconstruction of Waymo's rider-only crash record from NHTSA's public crash reports, compared with Waymo's published safety methodology.
 
