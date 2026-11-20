@@ -1,32 +1,28 @@
 # Mohammad Albati
 
-**Safety and risk engineer · Probabilistic risk assessment (PRA) · Human reliability · Bayesian methods for rare events**
+**Safety and risk engineer · Probabilistic risk assessment (PRA) · Autonomous-vehicle safety · Bayesian methods for rare events**
 
-I have a Ph.D. in Nuclear, Plasma & Radiological Engineering at the University of Illinois Urbana-Champaign. I work on quantitative safety for complex systems: probabilistic risk assessment, human reliability analysis, common-cause failures, and uncertainty quantification for rare events. Before my Ph.D. I spent six years as a nuclear safety analysis engineer at the Jordan Research & Training Reactor. I'm now applying these methods to autonomous vehicles, nuclear, and other safety-critical automated systems.
+I recently defended my Ph.D. in Nuclear, Plasma & Radiological Engineering at the University of Illinois Urbana-Champaign. I work on quantitative safety for complex systems: probabilistic risk assessment, human reliability analysis, common-cause failures, and uncertainty quantification for rare events. Before my Ph.D. I spent six years as a nuclear safety analysis engineer at the Jordan Research & Training Reactor, after two years at the Korea Atomic Energy Research Institute (KAERI). I'm now applying these methods to autonomous vehicles.
 
-## Featured project
+## Autonomous-vehicle safety portfolio
 
-### [How much evidence is enough? A Bayesian rare-event analysis of robotaxi crash data](https://github.com/mohalbati/av-safety-bayesian-analysis)
-[![DOI](https://zenodo.org/badge/1436574246.svg)](https://doi.org/10.5281/zenodo.23732384)
+One question runs through these projects: **what evidence shows that a driverless vehicle is safe enough, and how far can each kind of evidence be trusted?**
 
+**Crash-data rates → counterfactual uncertainty → field monitoring → simulation credibility → simulation as safety evidence**
 
-An independent reconstruction of Waymo's rider-only crash record from NHTSA's public crash reports, compared with Waymo's published safety methodology.
+| | Project | Question | Highlights |
+|---|---|---|---|
+| 1 | [**av-safety-bayesian-analysis**](https://github.com/mohalbati/av-safety-bayesian-analysis) [![DOI](https://zenodo.org/badge/1436574246.svg)](https://doi.org/10.5281/zenodo.23732384) | How much real-world evidence is enough? | Rebuilds a robotaxi crash record from public NHTSA reports (99.5% match to the published list) and applies rare-event Bayesian methods from nuclear PRA, including the miles a new operator needs before claiming a safety benefit |
+| 2 | [**av-counterfactual-uq**](https://github.com/mohalbati/av-counterfactual-uq) [![DOI](https://zenodo.org/badge/1440901346.svg)](https://doi.org/10.5281/zenodo.23838254) | How certain is a counterfactual crash simulation? | Adds uncertainty to reference-driver benchmarking of reconstructed crashes: in 14 of 16 test conflicts the deterministic verdict flips with probability above 20%. Browser simulator, video and CARLA 3D demo |
+| 3 | [**av-safety-monitoring**](https://github.com/mohalbati/av-safety-monitoring) [![DOI](https://zenodo.org/badge/1441811364.svg)](https://doi.org/10.5281/zenodo.23858361) | Can field data catch a safety regression? | Test coverage, Poisson CUSUM monitoring and an automated release health report: field data catch a 25% rise in all crashes in about 6 fleet-weeks, but serious-injury regressions only after decades, so release gating must rest on scenario testing |
+| 4 | [**av-sim-credibility**](https://github.com/mohalbati/av-sim-credibility) | How much should a safety claim trust simulation? | Validates simulated road users against 2,000 real Waymo Open Motion Dataset scenes, per scenario type and in the dangerous tail, then sets a credibility level (ASME V&V 40 logic) and a weight for simulated miles |
+| 5 | [**av-sim-vnv-evidence**](https://github.com/mohalbati/av-sim-vnv-evidence) | How much real testing can simulation replace? | Integration-level V&V plan and estimators that fuse simulated and real results (PPI, PPI++, power prior, hierarchical model). Matching the average conflict rate is not enough: the per-scenario agreement between simulated and real outcomes sets how much real testing simulation saves |
 
-- Reproduces 99.5% of Waymo's published crash list from public data alone
-- Matches Waymo's published reductions within 0.3 points when given the same counts
-- Shows that the corrections to the human benchmark move the any-injury result from 68.5% to 82.1%
-- Estimates how many miles a new operator needs before it can claim a safety benefit
+**In progress:** *av-redundancy-ccf*: how much an independent safety guard adds to the main driving stack, measured with the common-cause failure methods of PRA (not yet public).
 
-[![Benchmark versions](https://raw.githubusercontent.com/mohalbati/av-safety-bayesian-analysis/main/results/figG_benchmark_modelform.png)](https://github.com/mohalbati/av-safety-bayesian-analysis)
+Each project has a technical report written for non-specialists, automated tests and one-command reproduction. The analysis code was written with AI assistance; I designed the studies and ran and checked every result. Waymo Open Dataset material is used under its non-commercial licence, and no scene data is redistributed.
 
-`Python` · `Bayesian statistics` · `PRA` · `NHTSA SGO data` · [Full report (PDF)](https://github.com/mohalbati/av-safety-bayesian-analysis/blob/main/reports/AV_Safety_Bayesian_Analysis_Albati_full_report.pdf)
-
-## In progress
-
-- **Human reliability analysis for remote assistance in driverless fleets.** Adapting simulation-informed HRA methods to remote operators who support automated vehicles.
-- **PRA of the minimal-risk-condition fallback maneuver.** Fault trees and event trees for the maneuver that stops an automated vehicle safely after a failure, including common-cause failures across redundant sensing and compute.
-
-## Research highlights
+## Research highlights (Ph.D.)
 
 - **Simulation-Informed Probabilistic Dependency Analysis (SIP-DA).** MOOSE and RAVEN-based modelling of common-cause failures coupled with physical degradation and maintenance, developed with Constellation, Idaho National Laboratory, EPRI, Southern Company and X-energy.
 - **Integrated Human Reliability Analysis (I-HRA).** Agent-based simulation combined with THERP, SPAR-H and IDHEAS for emergency response outside the main control room, applied to FLEX deployment under external flooding.
@@ -42,8 +38,8 @@ Full list: [Google Scholar](https://scholar.google.com/citations?user=hseZ6CIAAA
 
 ## Tools
 
-`Python` · `MATLAB` · `C++` · `MOOSE` · `RAVEN` · `RISKMAN` · `OpenBUGS` · `GeNIe` · `NetLogo` · `Monte Carlo and Bayesian inference` · `Linux / HPC (SLURM)` · `Git`
+`Python` · `NumPy / SciPy` · `JAX (Waymax)` · `MATLAB` · `C++` · `MOOSE` · `RAVEN` · `RISKMAN` · `OpenBUGS` · `GeNIe` · `NetLogo` · `Monte Carlo and Bayesian inference` · `Linux / HPC (SLURM)` · `Git`
 
 ## Contact
 
-[LinkedIn](https://www.linkedin.com/in/mohammad-a-4b03903b) · [Google Scholar](https://scholar.google.com/citations?user=hseZ6CIAAAAJ&hl=en) · [ORCID](https://orcid.org/0000-0002-3096-5650) · malbati2@illinois.edu . mohammed_bate3@yahoo.com
+[LinkedIn](https://www.linkedin.com/in/mohammad-a-4b03903b) · [Google Scholar](https://scholar.google.com/citations?user=hseZ6CIAAAAJ&hl=en) · [ORCID](https://orcid.org/0000-0002-3096-5650) · malbati2@illinois.edu · drmalbati2@gmail.com
